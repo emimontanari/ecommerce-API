@@ -15,3 +15,6 @@ docker-compose up -d
 ```
 
 6. Levantar: `yarn start:dev`
+
+
+
