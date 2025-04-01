@@ -44,6 +44,5 @@ export class AuthController {
     @GetUser() user: User
   ) {
     return this.authService.checkAuthStatus(user);
-    
   }
 }
