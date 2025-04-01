@@ -38,28 +38,12 @@ export class AuthController {
     }
   }
 
-
-  @Get('private2')
-  @RoleProtected(ValidRoles.superUser, ValidRoles.admim, ValidRoles.user)
-  @UseGuards(AuthGuard(), UserRoleGuard)
-  privateRoute2(
-    @GetUser() user: User
-  ) {
-    return {
-      ok: true,
-      user
-    }
-  }
-  @Get('private3')
+  @Get('check-auth-status')
   @Auth()
-  privateRoute3(
+  checkAuthStatus(
     @GetUser() user: User
   ) {
-    return {
-      ok: true,
-      user
-    }
+    return this.authService.checkAuthStatus(user);
+    
   }
-
-
 }
